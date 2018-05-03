@@ -8,5 +8,5 @@ class TheatreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Theatre
-        fields = ('id', 'name', 'owner', 'date_created', 'date_modified', 'action', 'tracking')
+        fields = ('id', 'name', 'owner', 'date_created', 'date_modified', 'youtube_url')
         read_only_fields = ('date_created', 'date_modified')
