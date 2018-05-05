@@ -27,3 +27,4 @@ class DetailsView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticated, IsOwner)
 
 
+
