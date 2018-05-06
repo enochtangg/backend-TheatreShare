@@ -1,6 +1,8 @@
 from rest_framework.permissions import BasePermission
 from .models import Theatre
 
+import json
+
 
 class IsOwner(BasePermission):
 
