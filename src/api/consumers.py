@@ -17,6 +17,7 @@ def ws_connect(message):
     message.reply_channel.send({"accept": True})
     message.channel_session['theatres'] = []
 
+
 @channel_session_user
 def ws_disconnect(message):
     # Unsubscribe from any connected rooms
