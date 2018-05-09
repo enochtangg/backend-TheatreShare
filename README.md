@@ -33,8 +33,10 @@ cmd/install;
 cmd/runredis;
 ```
 
-### Run the server!
+### Run the server
 
 ```bash
 cmd/runserver;
 ```
+
+Configure frontend-TheatreShare as well as start watching videos/chatting with friends!
