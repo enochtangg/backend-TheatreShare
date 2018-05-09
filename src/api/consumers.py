@@ -61,7 +61,7 @@ def chat_join(message):
 
     # Send a "enter message" to the room if available
     if NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
-        theatre.send_message(None, message.user, MSG_TYPE_ENTER)
+        theatre.send_message(message=message['message'], user=message.user, msg_type=MSG_TYPE_ENTER, action=False)
 
     # OK, add them in. The websocket_group is what we'll send messages
     # to so that everyone in the chat room gets them.
@@ -86,7 +86,7 @@ def chat_leave(message):
 
     # Send a "leave message" to the room if available
     if NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
-        theatre.send_message(None, message.user, MSG_TYPE_LEAVE)
+        theatre.send_message(message=message['message'], user=message.user, msg_type=MSG_TYPE_LEAVE, action=False)
 
     theatre.websocket_group.discard(message.reply_channel)
     message.channel_session['theatres'] = list(set(message.channel_session['theatres']).difference([theatre.id]))
@@ -104,4 +104,4 @@ def chat_send(message):
     if int(message['theatre']) not in message.channel_session['theatres']:
         raise ClientError("ROOM_ACCESS_DENIED")
     theatre = get_room_or_error(message["theatre"], message.user)
-    theatre.send_message(message["message"], message.user)
+    theatre.send_message(message=message["message"], user=message.user, action=message['action'])
