@@ -16,13 +16,14 @@ faced was being able to dynamically alter vue components according to the socket
 ### Clone this project
 
 ```bash
-git clone git@github.com:enochtangg/backend-TheatreShare.git
+git clone https://github.com/enochtangg/backend-TheatreShare.git
 cd backend-TheatreShare;
 ```
 
 ### Install the dependencies
 
 ```bash
+virtualenv venv;
 cmd/install;
 ```
 
